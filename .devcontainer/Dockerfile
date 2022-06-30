@@ -17,3 +17,23 @@ RUN wget https://llvm-gcc-renesas.com/downloads/d.php?f=rx/newlib/8.3.0.202202-g
 RUN wget https://llvm-gcc-renesas.com/downloads/d.php?f=rx/binutils/8.3.0.202202-gnurx/binutils-2.36.1.zip -O binutils-2.36.1.zip \
     && unzip binutils-2.36.1.zip \
     && mv binutils-2.36.1 binutils
+
+RUN mkdir -p /usr/local/src/RX-ToolChain/build/binutils \
+    && mkdir -p /usr/local/src/RX-ToolChain/prefix
+
+WORKDIR /usr/local/src/RX-ToolChain/source/binutils
+
+RUN chmod +x configure \
+    && chmod 777 missing \
+    bfd \
+    bfd/po \
+    install-sh \
+    mkinstalldirs
+
+WORKDIR /usr/local/src/RX-ToolChain/build/binutils
+
+RUN /usr/local/src/RX-ToolChain/source/binutils/configure \
+    --target=rx-elf \
+    --prefix=/usr/local/src/RX-ToolChain/prefix \
+    --enable-maintainer-mode \
+    --disable-werror
