@@ -4,6 +4,16 @@
 ARG VARIANT="bullseye"
 FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
 
-# [Optional] Uncomment this section to install additional packages.
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends <your-package-list-here>
+WORKDIR /usr/local/src/RX-ToolChain/source
+
+RUN wget https://llvm-gcc-renesas.com/downloads/d.php?f=rx/gcc/8.3.0.202202-gnurx/gcc-8.3.0.zip -O gcc-8.3.0.zip \
+    && unzip gcc-8.3.0.zip \
+    && mv gcc-8.3.0 gcc
+
+RUN wget https://llvm-gcc-renesas.com/downloads/d.php?f=rx/newlib/8.3.0.202202-gnurx/newlib-4.1.0.zip -O newlib-4.1.0.zip \
+    && unzip newlib-4.1.0.zip \
+    && mv newlib-4.1.0 newlib
+
+RUN wget https://llvm-gcc-renesas.com/downloads/d.php?f=rx/binutils/8.3.0.202202-gnurx/binutils-2.36.1.zip -O binutils-2.36.1.zip \
+    && unzip binutils-2.36.1.zip \
+    && mv binutils-2.36.1 binutils
