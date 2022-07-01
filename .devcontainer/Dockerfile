@@ -10,10 +10,10 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-ENV PATH="/home/vscode/toolchains/bin:${PATH}"
+ENV PATH="/opt/toolchains/bin:${PATH}"
 
 COPY ./gcc-8.3.0.202202-GNURX-ELF.run /tmp/
 
 RUN mkdir -p /home/vscode/toolchains/ \
     && chmod +x /tmp/gcc-8.3.0.202202-GNURX-ELF.run \
-    && /tmp/gcc-8.3.0.202202-GNURX-ELF.run -y -p /home/vscode/toolchains
+    && /tmp/gcc-8.3.0.202202-GNURX-ELF.run -y -p /opt/toolchains
