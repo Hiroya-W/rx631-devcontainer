@@ -4,6 +4,12 @@
 ARG VARIANT="bullseye"
 FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    libboost-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 ENV PATH="/home/vscode/toolchains/bin:${PATH}"
 
 COPY ./gcc-8.3.0.202202-GNURX-ELF.run /tmp/
