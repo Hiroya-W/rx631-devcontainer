@@ -13,6 +13,10 @@ git clone https://github.com/Hiroya-W/rx631_gcc_projects.git --recursive
 ToolChain インストーラを用いて Dockerfile をビルドします。 
 `gcc-8.3.0.202202-GNURX-ELF.run` を取得して、`.devcontainer/` に配置してください。
 
+ToolChainは以下から取得出来ますが、インストーラのダウンロードには、Renesasアカウントの登録が必要です。
+
+- [GCC for Renesas X.X.X.YYYYMM-GNURX Toolchain](https://llvm-gcc-renesas.com/ja/rx-download-toolchains/)
+
 別のバージョンのToolChainを利用する場合は、 `.devcontainer/Dockerfile` の `RXINSTALLER` を適切に変更してください。
 
 ```Dockerfile
