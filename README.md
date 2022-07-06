@@ -4,6 +4,10 @@ CPUボード RX631（R5F5631MDDFL）を利用した [HM-StarterKit 手のひら�
 
 CS+ではなく、GCC for Renesas ToolChainを用いています。
 
+```bash
+git clone https://github.com/Hiroya-W/rx631_gcc_projects.git --recursive
+```
+
 ## Requirements
 
 ToolChain インストーラを用いて Dockerfile をビルドします。 
