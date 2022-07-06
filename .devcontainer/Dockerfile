@@ -20,3 +20,9 @@ RUN mkdir -p /home/vscode/toolchains/ \
     && chmod +x /tmp/${RXINSTALLER} \
     && /tmp/${RXINSTALLER} -y -p /opt/toolchains \
     && rm /tmp/${RXINSTALLER}
+
+RUN git clone --depth 1 https://github.com/Hiroya-W/RX.git -b rx_prog-RX631 /tmp/RX \
+    && cd /tmp/RX/rxprog \
+    && make \
+    && make install \
+    && rm -rf /tmp/RX
