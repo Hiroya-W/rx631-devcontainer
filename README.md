@@ -2,6 +2,8 @@
 
 CPUボード RX631（R5F5631MDDFL）を利用した [HM-StarterKit 手のひらサイズのマイクロマウス学習キット](https://rt-net.jp/products/hm-starterkit/) の開発用 dev-container です。
 
+CS+ではなく、GCC for Renesas ToolChainを用いています。
+
 ## Requirements
 
 ToolChain インストーラを用いて Dockerfile をビルドします。 
