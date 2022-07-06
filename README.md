@@ -23,7 +23,16 @@ ToolChainは以下から取得出来ますが、インストーラのダウン�
 ARG RXINSTALLER="gcc-8.3.0.202202-GNURX-ELF.run"
 ```
 
+## Source Code
+
+e2 studio で GCC for Renesas ToolChain 向けプロジェクトとして生成したソースコードと Makefile を配置しています。
+
+C++向けコードは以下のリポジトリも参考にしてください。
+
+[Hiroya-W/rx631_gcc_projects](https://github.com/Hiroya-W/rx631_gcc_projects)
+
 ## 参考
 
 - [番外編 Part1 MacOSで環境構築を始めよう！ – しゅうのマイクロマウス研修](https://rt-net.jp/mobility/archives/13282)
 - [hirakuni45/RX: Renesas RX Microcontroller, C++ framework, Library, Sample](https://github.com/hirakuni45/RX)
+- [Hiroya-W/rx631_gcc_projects: Source code for RX631 using GCC for Renesas Toolchain](https://github.com/Hiroya-W/rx631_gcc_projects)
