@@ -1,0 +1,3 @@
+[submodule "rx631_gcc_projects"]
+	path = rx631_gcc_projects
+	url = https://github.com/Hiroya-W/rx631_gcc_projects.git
