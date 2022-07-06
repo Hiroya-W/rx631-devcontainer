@@ -4,6 +4,8 @@
 ARG VARIANT="bullseye"
 FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
 
+ARG RXINSTALLER="gcc-8.3.0.202202-GNURX-ELF.run"
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     libboost-dev \
@@ -12,8 +14,9 @@ RUN apt-get update \
 
 ENV PATH="/opt/toolchains/bin:${PATH}"
 
-COPY ./gcc-8.3.0.202202-GNURX-ELF.run /tmp/
+COPY ./${RXINSTALLER} /tmp/
 
 RUN mkdir -p /home/vscode/toolchains/ \
-    && chmod +x /tmp/gcc-8.3.0.202202-GNURX-ELF.run \
-    && /tmp/gcc-8.3.0.202202-GNURX-ELF.run -y -p /opt/toolchains
+    && chmod +x /tmp/${RXINSTALLER} \
+    && /tmp/${RXINSTALLER} -y -p /opt/toolchains \
+    && rm /tmp/${RXINSTALLER}
